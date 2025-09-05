@@ -24,7 +24,7 @@ public class BookingController {
                                   @RequestParam String startTime,
                                   @RequestParam String endTime) {
         return bookingService.requestBooking(clubId, venueId,
-                LocalDateTime.parse(startTime), LocalDateTime.parse(endTime));
+                LocalDateTime.parse(startTime.trim()), LocalDateTime.parse(endTime.trim()));
     }
 
     @PutMapping("/{id}/approve")
